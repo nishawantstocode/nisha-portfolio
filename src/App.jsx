@@ -32,12 +32,11 @@ const projects = [
 
 const skills = [
   "React",
-  "JavaScript",
-  "HTML",
-  "CSS",
+  "Basic JavaScript",
+  "Basic Python",
+  "Basic SQL",
+  "Basic HTML/CSS",
   "Tailwind CSS",
-  "SQL",
-  "Python",
   "Java",
   "Excel",
   "GitHub",
