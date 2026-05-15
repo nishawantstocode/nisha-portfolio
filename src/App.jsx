@@ -21,10 +21,12 @@ const projects = [
   },
   {
     title: "InternPilot AI",
+    badge: "Featured Project",
     description:
-      "An AI-assisted internship search workspace concept that helps students track applications, tailor materials, and prepare for interviews.",
-    tech: ["React", "AI workflow design", "Data modeling", "UX research"],
-    status: "Coming Soon",
+      "An AI-inspired internship command center that helps students track applications, match resume keywords, prepare for interviews, and get smart coaching suggestions.",
+    tech: ["React", "Vite", "Tailwind CSS", "localStorage", "Vercel"],
+    liveDemo: "https://internpilot-ai.vercel.app",
+    github: "https://github.com/nishawantstocode/internpilot-ai",
   },
 ];
 
@@ -440,14 +442,14 @@ export default function App() {
               )}
 
               <div className="pointer-events-none relative z-10">
+                {project.badge && (
+                  <span className="mb-4 inline-flex rounded-full border border-cyan-200/30 bg-cyan-200/10 px-3 py-1 text-xs font-bold text-cyan-100">
+                    {project.badge}
+                  </span>
+                )}
                 <h4 className="text-xl font-bold transition duration-300 group-hover:text-rose-100">
                   {project.title}
                 </h4>
-                {project.status && (
-                  <span className="mt-4 inline-flex rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-xs font-bold text-amber-100">
-                    {project.status}
-                  </span>
-                )}
                 <p className="mt-3 text-sm leading-6 text-slate-300">
                   {project.description}
                 </p>
@@ -488,13 +490,6 @@ export default function App() {
                 </div>
               )}
 
-              {project.status && (
-                <div className="relative z-20 mt-6">
-                  <span className="rounded-lg border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-bold text-slate-200">
-                    Coming Soon
-                  </span>
-                </div>
-              )}
             </article>
           ))}
         </div>
