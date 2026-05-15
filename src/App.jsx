@@ -5,20 +5,26 @@ const projects = [
   {
     title: "Internship Portfolio Website",
     description:
-      "A responsive personal portfolio designed to communicate internship readiness, project experience, technical skills, and recruiter-friendly contact paths in one polished place.",
-    tech: ["React", "Vite", "Tailwind CSS", "Responsive Design"],
+      "A responsive personal portfolio website built to showcase my skills, projects, resume, and contact links for internship applications.",
+    tech: ["React", "Vite", "Tailwind CSS", "Vercel"],
+    liveDemo: "https://nisha-portfolio-dajo.vercel.app",
+    github: "https://github.com/nishawantstocode/nisha-portfolio",
   },
   {
-    title: "Internship Application Tracker Dashboard",
+    title: "BudgetBloom Dashboard",
     description:
-      "A dashboard concept for organizing internship applications, deadlines, company notes, status updates, and follow-up reminders so the search feels less chaotic.",
-    tech: ["Excel", "Google Sheets", "Data Organization", "Automation"],
+      "A modern student budget tracker that helps users track income, expenses, savings goals, and spending insights through interactive charts.",
+    tech: ["React", "Tailwind CSS", "Recharts", "localStorage", "Vercel"],
+    liveDemo: "https://budgetwithnisha.vercel.app",
+    github: "https://github.com/nishawantstocode/student-budget-dashboard",
+    isCardClickable: true,
   },
   {
-    title: "Student Budget / Data Dashboard",
+    title: "InternPilot AI",
     description:
-      "A beginner-friendly analytics dashboard that tracks income, expenses, savings goals, and spending patterns with clear summaries for better student financial decisions.",
-    tech: ["Excel", "SQL Concepts", "Charts", "Data Analysis"],
+      "An AI-assisted internship search workspace concept that helps students track applications, tailor materials, and prepare for interviews.",
+    tech: ["React", "AI workflow design", "Data modeling", "UX research"],
+    status: "Coming Soon",
   },
 ];
 
@@ -47,7 +53,7 @@ const internshipTargets = [
 const githubUrl = "https://github.com/nishawantstocode";
 const linkedInUrl = "https://www.linkedin.com/in/nisha-kc-26099a325";
 const emailAddress = "mailmeatnishakc@gmail.com";
-const resumeUrl = "";
+const resumeUrl = "/Nisha_KC_Resume.pdf";
 
 const profileLinks = [
   {
@@ -311,7 +317,7 @@ export default function App() {
               {[
                 ["Best fit", "Software, IT, data, or business tech internship"],
                 ["What I bring", "Fast learning, clear writing, organized execution"],
-                ["Proof point", "Three practical projects built around real student and workplace needs"],
+                ["Proof point", "Three focused projects built around real student and workplace needs"],
                 ["Hiring vibe", "Warm communicator, low ego, high follow-through"],
               ].map(([label, value]) => (
                 <div
@@ -406,76 +412,90 @@ export default function App() {
         id="projects"
         className="reveal-section mx-auto max-w-6xl scroll-mt-24 px-4 py-14 sm:px-6 sm:py-20"
       >
-        <h3 className="text-2xl font-bold sm:text-3xl">Projects</h3>
-
-        <div className="animate-fade-up mt-6 rounded-3xl border border-rose-200/20 bg-gradient-to-br from-rose-200/12 via-white/[0.06] to-cyan-200/10 p-4 shadow-2xl shadow-black/25 transition duration-500 hover:-translate-y-1 hover:border-rose-200/40 sm:mt-8 sm:p-6 md:p-8">
-          <div className="flex flex-col justify-between gap-5 border-b border-white/10 pb-6 md:flex-row md:items-start">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-rose-100">
-                Featured Project
-              </p>
-              <h4 className="mt-3 text-2xl font-black text-white sm:text-3xl">
-                Internship Portfolio Website
-              </h4>
-              <p className="mt-4 max-w-3xl leading-7 text-slate-300">
-                A polished, responsive portfolio built to give recruiters a
-                quick but memorable view of my skills, projects, personality,
-                and internship goals.
-              </p>
-            </div>
-            <span className="w-fit rounded-md bg-rose-200 px-3 py-2 text-sm font-bold text-slate-950">
-              React + Career Tech
-            </span>
-          </div>
-
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {[
-              [
-                "Problem",
-                "Students need a way to present skills, projects, personality, and resume access without relying only on a one-page PDF.",
-              ],
-              [
-                "Solution",
-                "This site creates a recruiter-friendly overview of my skills, projects, target roles, and contact paths in a modern responsive format.",
-              ],
-              ["Tech Stack", "React, Vite, Tailwind CSS, responsive layout, and Vercel-ready structure."],
-              [
-                "Impact",
-                "Makes it easier for recruiters to quickly understand what I can contribute as an early-career intern.",
-              ],
-            ].map(([label, text]) => (
-              <div
-                key={label}
-                className="premium-card rounded-2xl border border-white/10 bg-[#0c0911]/60 p-5"
-              >
-                <p className="text-sm font-bold text-rose-100">{label}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{text}</p>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-3xl">
+          <p className="text-sm font-bold uppercase tracking-[0.24em] text-rose-100">
+            Selected Work
+          </p>
+          <h3 className="mt-3 text-2xl font-bold sm:text-3xl">Projects</h3>
+          <p className="mt-4 leading-7 text-slate-300">
+            Three focused projects that show how I think, build, organize
+            information, and turn early-career curiosity into useful work.
+          </p>
         </div>
 
         <div className="mt-6 grid gap-5 sm:mt-8 md:grid-cols-3 md:gap-6">
           {projects.map((project) => (
-            <div
+            <article
               key={project.title}
-              className="premium-card rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl sm:rounded-3xl sm:p-6"
+              className="premium-card group relative rounded-2xl border border-white/10 bg-white/5 p-5 shadow-xl sm:rounded-3xl sm:p-6"
             >
-              <h4 className="text-xl font-bold">{project.title}</h4>
-              <p className="mt-3 text-sm leading-6 text-slate-300">
-                {project.description}
-              </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {project.tech.map((item) => (
-                  <span
-                    key={item}
-                    className="rounded-full bg-rose-200/10 px-3 py-1 text-xs text-rose-100"
-                  >
-                    {item}
+              {project.isCardClickable && (
+                <a
+                  href={project.liveDemo}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={`Open ${project.title} live demo`}
+                  className="absolute inset-0 z-0 rounded-2xl focus:outline-none focus:ring-2 focus:ring-rose-200/70 focus:ring-offset-2 focus:ring-offset-[#100d16] sm:rounded-3xl"
+                />
+              )}
+
+              <div className="pointer-events-none relative z-10">
+                <h4 className="text-xl font-bold transition duration-300 group-hover:text-rose-100">
+                  {project.title}
+                </h4>
+                {project.status && (
+                  <span className="mt-4 inline-flex rounded-full border border-amber-200/30 bg-amber-200/10 px-3 py-1 text-xs font-bold text-amber-100">
+                    {project.status}
                   </span>
-                ))}
+                )}
+                <p className="mt-3 text-sm leading-6 text-slate-300">
+                  {project.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tech.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full bg-rose-200/10 px-3 py-1 text-xs text-rose-100"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+
+              {(project.liveDemo || project.github) && (
+                <div className="relative z-20 mt-6 flex flex-wrap gap-3">
+                  {project.liveDemo && (
+                    <a
+                      href={project.liveDemo}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="premium-button rounded-lg bg-gradient-to-r from-rose-200 to-cyan-200 px-4 py-2.5 text-sm font-black text-slate-950 shadow-lg shadow-rose-950/30"
+                    >
+                      Live Demo
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="premium-button rounded-lg border border-white/15 bg-white/[0.06] px-4 py-2.5 text-sm font-bold text-white"
+                    >
+                      GitHub Code
+                    </a>
+                  )}
+                </div>
+              )}
+
+              {project.status && (
+                <div className="relative z-20 mt-6">
+                  <span className="rounded-lg border border-white/10 bg-white/[0.06] px-4 py-2.5 text-sm font-bold text-slate-200">
+                    Coming Soon
+                  </span>
+                </div>
+              )}
+            </article>
           ))}
         </div>
       </section>
@@ -538,6 +558,8 @@ export default function App() {
 }
 
 function ActionLink({ link, className }) {
+  const opensInNewTab = link.href.startsWith("http") || link.href.endsWith(".pdf");
+
   if (link.isDisabled) {
     return (
       <span
@@ -552,8 +574,8 @@ function ActionLink({ link, className }) {
   return (
     <a
       href={link.href}
-      target={link.href.startsWith("http") ? "_blank" : undefined}
-      rel={link.href.startsWith("http") ? "noreferrer" : undefined}
+      target={opensInNewTab ? "_blank" : undefined}
+      rel={opensInNewTab ? "noreferrer" : undefined}
       className={className}
     >
       {link.label}
